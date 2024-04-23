@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: taskmaster
-          image: devisree146/task-app:1.0
+          image: devisree146/task-app:2.0
           ports:
             - containerPort: 5000
           imagePullPolicy: Always
