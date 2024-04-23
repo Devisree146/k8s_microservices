@@ -1,0 +1,42 @@
+(A).ON LOCAL MACHINE
+
+1.use the below command to dockerise the application
+
+(a).docker build -t task-app:2.0
+(b).docker tag task-app:2.0 devisree146/task-app:2.0
+(c).docker push devisree146/task-app:2.0
+
+
+(B).ON GCP VM
+
+1.Connect to the VM using the GCP credentials(Key pair,public IP)
+
+2.Clone repo using below command
+
+git clone https://github.com/Devisree146/k8s_microservices.git
+
+3.move to the k8s-flask application folder using below command
+
+(a).ls
+(b).cd k8s_microservices/
+(c).cd flask-k8s/
+
+4.Apply the k8s manifest using below command
+
+(a).kubectl apply -f taskmaster.yml
+(b).kubectl get pods
+(c).kubectl apply -f taskmaster-svc.yml
+(d).kubectl get svc taskmaster-svc
+
+
+5.Move to the mongodb folder using below command
+
+(a).ls
+(b).cd mongodb/
+
+6.Apply the mongodb manifest using the below command
+
+(a).kubectl apply -f mongo-pv.yml
+(b).kubectl apply -f mongo-pvc.yml
+(c).kubectl apply -f mongo.yml
+(d).kubectl apply -f mongo-svc.yml
