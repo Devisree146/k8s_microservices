@@ -55,7 +55,7 @@ def delete_task(id):
     )
 @app.route("/tasks/delete", methods=["POST"])
 def delete_all_tasks():
-    db.task.remove()
+    db.task.delete_many({})
     return jsonify(
         message="All Tasks deleted!"
     )
